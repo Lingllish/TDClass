@@ -99,7 +99,7 @@ function draw() {
   
   // 分析音訊頻譜
   let spectrum = fft.analyze();
-  let avgEnergy = fft.getEnergy("bass"); // 可以使用 "bass", "lowMid", "mid", "highMid", "treble"
+  let avgEnergy = fft.getEnergy("mid"); // 可以使用 "bass", "lowMid", "mid", "highMid", "treble"
   
   // 根據頻譜調整呼吸率
   let breathRate = map(avgEnergy, 0, 255, 0, 3); // 假設頻率能量範圍是 0 到 255
@@ -128,7 +128,7 @@ function updateCircles(circles, breathRate) {
     let radius = circle.minRadius + (sin(circle.angle) * (circle.maxRadius - circle.minRadius) / 2) + ((circle.maxRadius - circle.minRadius) / 2);
     let minSpeed = circle.speed * 0.5;
     let maxSpeed = circle.speed * 4.5; // 扩大速度变化范围
-    let speed = map(breathRate, 0, 5, minSpeed, maxSpeed);
+    let speed = map(breathRate, 0, 3, minSpeed, maxSpeed);
     circle.angle += speed * circle.direction; // 根據方向調整角度
   }
 }
