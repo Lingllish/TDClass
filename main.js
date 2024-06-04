@@ -103,7 +103,7 @@ function draw() {
   
   // 根據頻譜調整呼吸率
   let breathRate = map(avgEnergy, 0, 255, 0, 3); // 假設頻率能量範圍是 0 到 255
-  //console.log(breathRate)
+  console.log(breathRate)
   
   // 更新填充圓大小和速度
   updateCircles(filledCircles, breathRate);
