@@ -127,8 +127,8 @@ function updateCircles(circles, breathRate) {
     // 根據呼吸率調整圓大小和速度
     let radius = circle.minRadius + (sin(circle.angle) * (circle.maxRadius - circle.minRadius) / 2) + ((circle.maxRadius - circle.minRadius) / 2);
     let minSpeed = circle.speed * 0.5;
-    let maxSpeed = circle.speed * 2.5; // 扩大速度变化范围
-    let speed = map(breathRate, 0, 3, minSpeed, maxSpeed);
+    let maxSpeed = circle.speed * 4.5; // 扩大速度变化范围
+    let speed = map(breathRate, 0, 5, minSpeed, maxSpeed);
     circle.angle += speed * circle.direction; // 根據方向調整角度
   }
 }
