@@ -99,7 +99,7 @@ function draw() {
   
   // 分析音訊頻譜
   let spectrum = fft.analyze();
-  let avgEnergy = fft.getEnergy("mid"); // 可以使用 "bass", "lowMid", "mid", "highMid", "treble"
+  let avgEnergy = fft.getEnergy("highMid"); // 可以使用 "bass", "lowMid", "mid", "highMid", "treble"
   
   // 根據頻譜調整呼吸率
   let breathRate = map(avgEnergy, 0, 255, 0, 3); // 假設頻率能量範圍是 0 到 255
